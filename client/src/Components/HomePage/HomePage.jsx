@@ -8,15 +8,16 @@ function HomePage() {
 
   useEffect(() => {
     fetch(
-      `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_SPOONACULAR_API_KEY}&number=100`
+      `http://localhost:3001/allrecipes`
     )
       .then((response) => response.json())
       .then((data) => {
         console.log(data.results);
-        setRecipes(data.results);
+        setRecipes(data);
       });
   }, []);
 
+  
   const filteredRecipes = recipes.filter(recipe =>
     recipe.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
@@ -44,7 +45,7 @@ function HomePage() {
             id={recipe.id}
             image={recipe.image}
             name={recipe.title}
-            diets={[]}
+            diets={recipe.diets}
           />
         ))}
       </div>

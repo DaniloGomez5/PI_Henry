@@ -6,10 +6,13 @@ function RecipeDetail() {
   const [recipeDetails, setRecipeDetails] = useState(null);
 
   useEffect(() => {
-    fetch(`https://api.spoonacular.com/recipes/${id}/information?apiKey=${process.env.REACT_APP_SPOONACULAR_API_KEY}`)
+    fetch(`http://localhost:3001/recipes/${id}`)
       .then(response => response.json())
       .then(data => {
         setRecipeDetails(data);
+      })
+      .catch(error => {
+        console.error('Error fetching recipe details:', error);
       });
   }, [id]);
 
