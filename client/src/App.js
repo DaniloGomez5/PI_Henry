@@ -2,6 +2,7 @@ import { Route, Routes, Link } from "react-router-dom";
 import "./App.css";
 import HomePage from "./Components/HomePage/HomePage";
 import RecipeDetail from "./Components/RecipeDetail/RecipeDetail";
+import FormPage from "./Components/FormPage/FormPage";
 
 
 
@@ -20,11 +21,7 @@ function App() {
         <Route path="/home" element={<HomePage />}
         />
         <Route path="/recipe/:id" element={<RecipeDetail />} />
-        <Route path="/form" element={
-          <div>
-            <h2>Formulario para crear nuevas Recetas</h2>
-          </div>
-          } 
+        <Route path="/form" element={<FormPage />} 
         />
       </Routes>
     </div>
