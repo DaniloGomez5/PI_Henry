@@ -1,20 +1,20 @@
 export default function validation(data) {
     let errors = {
-        nombre: "",
-        resumen: "",
+        name: "",
+        summary: "",
         healthScore: "",
-        pasoAPaso: "",
-        imagen: "",
-        dietas: ""
+        steps: "",
+        Image: "",
+        diets: ""
     };
     
     // Validar campo "nombre"
-    if (data.nombre === "") {
+    if (data.name === "") {
         errors.nombre = "Por favor, ingresa el nombre de la receta.";
     }
     
     // Validar campo "resumen"
-    if (data.resumen === "") {
+    if (data.summary === "") {
         errors.resumen = "Por favor, ingresa un resumen del plato.";
     }
     
@@ -24,18 +24,18 @@ export default function validation(data) {
     }
     
     // Validar campo "pasoAPaso"
-    if (data.pasoAPaso === "") {
+    if (data.steps === "") {
         errors.pasoAPaso = "Por favor, ingresa el paso a paso de la receta.";
     }
     
     // Validar campo "imagen"
-    if (data.imagen === "") {
+    if (data.Image === "") {
         errors.imagen = "Por favor, ingresa una imagen para la receta.";
     }
     
     // Validar campo "dietas"
-    if (data.dietas.length === 0) {
-        errors.dietas = "Por favor, selecciona al menos un tipo de dieta.";
+    if (data.diets.length === 0) {
+        errors.diets = "Por favor, selecciona al menos un tipo de dieta.";
     }
     
     return errors;
