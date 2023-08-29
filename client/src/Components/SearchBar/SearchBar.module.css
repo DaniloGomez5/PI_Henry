@@ -1,0 +1,66 @@
+.contentSearchBar {
+   display: flex;
+   align-items: center;
+   max-width: 300px; /* Ajusta el ancho máximo según tu diseño */
+   margin: 1rem; /* Centrar horizontalmente */
+}
+
+.inputSearch {
+   flex: 1;
+   height: 1.5rem;
+   font-family: 'Montserrat', sans-serif;
+   border-radius: 1.1rem 0 0 1.1rem;
+   border: none;
+   padding: 0.5rem 1rem;
+   transition: background-color 0.3s, box-shadow 0.3s;
+   background-color: #f5f5f5;
+}
+
+.inputSearch:focus {
+   outline: none;
+   background-color: #ffffff;
+   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.inputSearch::placeholder {
+   color: #000000;
+}
+
+.cleanButton {
+   font-family: 'Montserrat', sans-serif;
+   height: 2.5rem;
+   width: 1.5rem;
+   border-radius: 0 1rem 1rem 0;
+   background-color: #ffffff; /* Un color verde elegante */
+   color: rgb(0, 0, 0);
+   font-weight: bold;
+   border: none;
+   cursor: pointer;
+   transition: transform 0.2s, background-color 0.3s;
+   margin-left: -1px;
+}
+
+.cleanButton:hover {
+   transform: scale(1.2);
+   background-color: #4b1d1d; /* Un tono más oscuro del verde */
+   border-radius: 1rem;
+}
+
+.searchbutton {
+   font-family: 'Montserrat', sans-serif;
+   height: 2.5rem;
+   width: 1.5rem;
+   background-color: #ffffff; /* Un color rojo elegante */
+   border: none;
+   cursor: pointer;
+   transition: transform 0.2s, background-color 0.3s;
+   margin-left: -1px;
+}
+
+.searchbutton:hover {
+   transform: scale(1.2);
+   background-color: #90e04f; /* Un tono más oscuro del rojo */
+   border-radius: 1rem;
+}
+
+

@@ -15,15 +15,19 @@ const Recipe = (sequelize) => {
     },
     Image: {
       type: DataTypes.STRING,
+      allowNull: false
     },
     summary: {
       type: DataTypes.STRING,
+      allowNull: false
     },
     healtScore: {
       type: DataTypes.INTEGER,
+      allowNull: false
     },
     steps: {
       type: DataTypes.TEXT,
+      allowNull: false
     },
   });
   return Recipe;

@@ -1,0 +1,101 @@
+.recipeCont {
+   display: flex;
+}
+
+.link {
+   text-decoration: none;
+}
+
+.Recipe {
+   width: 300px;
+   height: 300px;
+   border: 0.2rem solid rgba(255, 255, 255, 0.5);
+   box-shadow: 5px 5px 5px #000000;
+   border-radius: 50%;
+   padding: 0.2rem;
+   margin: 0.5rem;
+   font-family: cursive;
+   font-size: small;
+   background-size: cover;
+   background-position: center;
+   transition: transform 0.3s;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   /* border-radius: 35px 0 35px 0 */
+}
+.diet {
+   display: flex;
+   justify-content: space-between;
+   align-items: last baseline;
+   padding: 0;
+}
+
+.h3 {
+   margin: 40px;
+   font-size: 16px;
+   font-family: "Lato", sans-serif;
+   font-weight: 300;
+   color: rgb(255, 253, 253);
+   border-radius: 3rem;
+   padding: 0.5rem;
+   background: linear-gradient(45deg, rgba(210, 180, 140, 0.7), rgba(0, 0, 0, 0.7));
+   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+   border: 2px solid rgba(210, 180, 140, 0.7);
+   text-decoration: underline;
+   text-decoration-color: white;
+}
+
+/* .h3:hover {
+   font-size: medium;
+   font-weight: normal;
+   background-color: rgba(255, 255, 255, 0.75);
+} */
+
+.customLi {
+   list-style: none;
+   padding: 5%;
+   font-family: "Lato", sans-serif;
+   font-weight: bold;
+   color: rgb(0, 0, 0);
+   line-height: 1;
+   background: linear-gradient(45deg, rgba(210, 180, 140, 0.7), rgba(0, 0, 0, 0.7));
+   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+   border-radius: 25% 5% 50% 10%;
+   display: inline-block; /* Para que el borde se ajuste al contenido */
+   margin: 10px; /* Agrega un margen para separar los elementos */
+   text-decoration: underline;
+   text-decoration-color: white;
+}
+
+
+.customLi li {
+   margin-bottom: 5%;
+   text-align: left;
+   position: relative; /* Asegura que los marcadores personalizados sean relativos al li */
+}
+
+
+/* .customLi:hover {
+   border-radius: 1rem;
+   padding-top: 0.5rem;
+   padding-right: 0.5rem;
+   background-color: rgba(255, 255, 255, 0.5);
+} */
+
+.h4 {
+   font-family: "Lato", sans-serif;
+   font-weight: 300;
+   color: white;
+   text-align: center; /* Cambio a centrar el texto */
+   line-height: 1;
+   padding: 0.5rem;
+   background: linear-gradient(45deg, rgba(210, 180, 140, 0.7), rgba(0, 0, 0, 0.7));
+   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+   border-radius: 2rem;
+   margin: 30px; /* Centrar horizontalmente con margen automático */
+   display: inline-block; /* Para que el borde se ajuste al contenido */
+   text-decoration: underline;
+   text-decoration-color: white;
+}
+
