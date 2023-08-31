@@ -1,173 +1,119 @@
-@import url("https://fonts.googleapis.com/css2?family=Kalam:wght@700&display=swap");
-
 .back {
-   background-image: url(https://learnoper.com/wp-content/uploads/2022/05/3-cooking-scaled.jpg);
+   background-image: url("https://th.bing.com/th/id/R.4c36e08c14a7f1acc09d9bb5bf3fef8c?rik=4%2fO7XGMXmsaLfw&pid=ImgRaw&r=0");
    background-size: cover;
-   background-repeat: no-repeat;
-   background-attachment: fixed;
    background-position: center;
-   font-family: cursive;
-   width: 100vw;
    height: 100vh;
-   overflow: hidden;
    display: flex;
    flex-direction: column;
    align-items: center;
-}
-
-.titId {
+   justify-content: center;
+ }
+ 
+ .titleCont {
+   margin-bottom: 1rem;
+   text-align: center;
+ }
+ 
+ .title {
+   font-size: 2rem;
+   color: white;
+ }
+ 
+ .h3 {
    margin: 0;
-   padding: 0;
-   background-color: #260ac7;
-}
-
-.titleCont {
-   background-color: rgba(255, 254, 254, 0.5);
+   background: linear-gradient(45deg, rgba(210, 180, 140, 0.7), rgba(0, 0, 0, 0.7));
+   font-size: 1rem;
+   font-weight: bold;
+   color: white;
+   border-radius: 1rem;
+   padding: 0.5rem;
    width: fit-content;
-   padding-left: 1rem;
-   padding-right: 1rem;
-   height: 2.5rem;
-   border-bottom-right-radius: 2rem;
-   border-bottom-left-radius: 2rem;
-}
-
-.title {
-   margin-top: 0.5rem;
-   color: transparent;
-   background-image: linear-gradient(
-      to left,
-      #000000,
-      #260ac7,
-      #a11616,
-      #101669,
-      #000000
-   );
-   background-clip: text;
-   animation: color 3s linear infinite;
-   background-size: 500%;
-
-   font-family: "Kalam", cursive;
-   font-size: 1.9rem;
-   line-height: 1;
-}
-
-@keyframes color {
-   from {
-      background-position: 0% 50%;
-   }
-
-   to {
-      background-position: 100% 50%;
-   }
-}
-
-.recipeDetail {
-   width: 90vw;
-   height: 83vh;
-   margin-top: 2vh;
+   text-align: center;
+ }
+ 
+ .recipeDetail {
    display: flex;
-   justify-content: space-around;
-   align-content: space-between;
-}
-
-.dietsCont {
-   text-align: left;
-   width: fit-content;
-}
-
-.customList {
-   list-style: none; /* Elimina los marcadores por defecto */
-   display: grid;
-   grid-template-columns: 1fr 1fr; /* Dos columnas de igual tamaño */
-   grid-gap: 1px; /* Espacio entre las celdas */
-   font-size: 0.9rem;
-   font-weight: bold;
-   width: 35vw;
-   padding-left: 1.5rem; /* Agrega espacio para el nuevo marcador */
-   color: whitesmoke;
-   text-shadow: -1px -1px black, 1px 1px #333;
+   justify-content: space-between;
+   align-items: flex-start;
+   padding: 1.5rem;
+ }
+ 
+ .summaryCont {
+   width: 90%;
+   padding: 1rem;
+   background-color: rgba(0, 0, 0, 0.7);
    border-radius: 1rem;
-   padding-top: 0.5rem;
-   padding-bottom: 0.1rem;
-   padding-right: 1.5rem;
-   padding-left: 2.5rem;
-   background-color: rgba(0, 0, 0, 0.5);
-}
-
-.customList li {
-   margin-bottom: 10px;
-   text-align: left;
-   position: relative; /* Asegura que los marcadores personalizados sean relativos al li */
-}
-
-.customList li::before {
-   content: "✔"; /* Puedes cambiar este símbolo */
-   position: absolute;
-   left: -1rem; /* Coloca el marcador a la izquierda del li */
-   color: whitesmoke; /* Color del marcador */
-   font-size: 15px; /* Tamaño del marcador */
-   font-weight: bold;
+   margin-top: 1.1rem;
+ }
+ 
+ .summary {
+   font-size: 0.8rem;
+   color: white;
    text-shadow: -1px -1px black, 1px 1px #333;
-}
-
-.h3 {
+ }
+ 
+ .dietsCont {
+   width: 90%;
+   padding: 1rem;
+   background-color: rgba(0, 0, 0, 0.7);
+   border-radius: 1rem;
+   margin-top: 10px;
+ }
+ 
+ .customList {
+   list-style: none;
+   padding: 0;
    margin: 0;
-   background-color: rgba(255, 255, 255, 0.35);
-   font-size: normal;
-   font-weight: bold;
-   border-radius: 1rem;
-   padding-left: 0.5rem;
-   padding-right: 0.5rem;
-}
-
-.summaryCont {
-   margin-top: 0.5rem;
-   text-align: left;
-}
-
-.summary {
-   width: 40vw;
-   height: 17rem;
-   overflow: auto;
-   font-size: 0.8rem;
-   color: rgb(212, 208, 208);
-   text-shadow: -1px -1px black, 1px 1px #333;
-   border-radius: 1rem;
-   padding-top: 0.5rem;
-   padding-right: 0.5rem;
-   padding-left: 0.5rem;
-   background-color: rgba(0, 0, 0, 0.5);
-}
-
-.steps {
-   width: 40vw;
-   height: 29rem;
-   text-align: left;
-}
-
-.imgLogo {
-   width: 8rem;
-}
-
-.customSteps {
-   font-size: 0.8rem;
-   font-weight: bold;
-   width: 32vw;
-   height: 57vh;
-   padding-left: 1.5rem; /* Agrega espacio para el nuevo marcador */
+   font-size: 1.2rem;
    color: whitesmoke;
    text-shadow: -1px -1px black, 1px 1px #333;
+ }
+ 
+ .customList li {
+   margin-bottom: 0.5rem;
+ }
+ 
+ .steps {
+   width: 200%; /* Ajusta el ancho para que esté más centrado */
+   margin: 20px; /* Centra horizontalmente */
+   padding: 1rem;
+   background-color: rgba(0, 0, 0, 0.7);
    border-radius: 1rem;
-   padding-top: 0.5rem;
-   padding-bottom: 0.1rem;
-   padding-right: 1.5rem;
-   padding-left: 2.5rem;
-   background-color: rgba(0, 0, 0, 0.5);
-   overflow: auto;
-}
-
-.customSteps li {
-   margin-bottom: 10px;
-   text-align: left;
-   position: relative; /* Asegura que los marcadores personalizados sean relativos al li */
-}
+ }
+ 
+ .customSteps {
+   font-size: 1rem; /* Aumenta el tamaño del texto */
+   color: whitesmoke;
+   text-shadow: -1px -1px black, 1px 1px #333;
+   padding: 1.5rem; /* Aumenta el espacio interno */
+   background-color: rgba(0, 0, 0, 0.7);
+   border-radius: 1rem;
+   max-height: 30vh; /* Ajusta la altura máxima */
+   overflow-y: auto;
+ }
+ 
+ 
+ .recipeImage {
+   height: 30vh;
+   width: 40vh;
+   border-radius: 30px;
+   margin-top: 1rem;
+ }
+ 
+ .goHomeImg {
+   text-decoration: none;
+   color: white;
+ }
+ 
+ .goback {
+   font-size: 1.5rem;
+   padding: 0.5rem 1rem;
+   background-color: rgba(0, 0, 0, 0.7);
+   border-radius: 1rem;
+   cursor: pointer;
+ }
+ 
+ .goback:hover {
+   background-color: rgba(0, 0, 0, 0.9);
+ }
+ 

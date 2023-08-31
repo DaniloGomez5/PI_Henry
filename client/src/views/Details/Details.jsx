@@ -17,9 +17,8 @@ export const Details = () => {
       dispatch(cleanDetail());
     };
   }, [dispatch, id]);
-  /* console.log(recipeDetail); */
+
   useEffect(() => {
-    console.log(recipeDetail); // Muestra los datos cuando recipeDetail cambie
   }, [recipeDetail]);
 
   const handleHomeClick = () => {
@@ -27,18 +26,25 @@ export const Details = () => {
   };
 
   return (
-    <div
-      className={style.back}
-      style={{ backgroundImage: `url(${recipeDetail?.image})` }}
-    >
-      {/* <div className={style.titId}> */}
+    <div className={style.back} style={{ backgroundImage: "url(https://th.bing.com/th/id/R.4c36e08c14a7f1acc09d9bb5bf3fef8c?rik=4%2fO7XGMXmsaLfw&pid=ImgRaw&r=0)" }}>
+  
       <div className={style.titleCont}>
-        <h2 className={style.title}>{recipeDetail?.name}</h2>
+        <h2 className={style.title}>{recipeDetail?.title}</h2>
       </div>
+      
       <h3 className={style.h3}>ID: {recipeDetail?.id}</h3>
-      {/* </div> */}
+
       <div className={style.recipeDetail}>
+        
         <div>
+          
+          <div className={style.summaryCont}>
+            <h3 className={style.h3}>Summary</h3>
+            <div className={style.summary}>
+              <h3 dangerouslySetInnerHTML={{ __html: recipeDetail?.summary }} />
+            </div>
+          </div>
+          
           <div className={style.dietsCont}>
             <h3 className={style.h3}>Diets:</h3>
             <ul title="Diets" className={style.customList}>
@@ -47,30 +53,26 @@ export const Details = () => {
               })}
             </ul>
           </div>
-          <div className={style.summaryCont}>
-            <h3 className={style.h3}>Summary</h3>
-            <div className={style.summary}>
-              <h3>{recipeDetail?.summary}</h3>
-            </div>
-          </div>
+        
         </div>
+
         <div className={style.steps}>
-   <h3 className={style.h3}>Steps</h3>
-   <ol className={style.customSteps}>
-      {recipeDetail?.instructions && (
-         <div dangerouslySetInnerHTML={{ __html: recipeDetail.instructions }} />
-      )}
-   </ol>
-</div>
+          <h3 className={style.h3}>Steps</h3>
+          <ol className={style.customSteps}>
+              {recipeDetail?.instructions && (
+              <div dangerouslySetInnerHTML={{ __html: recipeDetail.instructions }} />
+            )}
+          </ol>
+          {recipeDetail && <img className={style.recipeImage} src={recipeDetail.image} alt="Recipe" />}
+        </div>
       </div>
+      
       <NavLink className={style.goHomeImg} to="/home" onClick={handleHomeClick}>
-        <img
-          className={style.imgLogo}
-          src="https://images.squarespace-cdn.com/content/v1/531dfad2e4b026b4af0daca0/1533059953767-KOEZJMDEU6NPUUTHVLTK/Back-Button.gif"
-          alt="go back"
-          title="Go back"
-        />
+        <div className={style.goback}>
+          ⏪
+        </div>
       </NavLink>
+    
     </div>
   );
 };

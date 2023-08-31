@@ -10,12 +10,12 @@ const LandingPage = () => {
    };
 
    return (
-      <div className={style.landingPageContent}>
+      <div className={style.landing}>
          <div className={style.titleContent}>
             <h1 className={style.h1Title}>SoyHenry PI: Food!</h1>
          </div>
-         <NavLink className={style.buttonStart} to="/home">
-            START
+         <NavLink className={style.button} to="/home">
+            Go!
          </NavLink>
       </div>
    );

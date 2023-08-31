@@ -1,17 +1,11 @@
 /* eslint-disable no-unused-vars */
 import style from "./SearchBar.module.css";
-import { useState, useEffect } from "react";
-import {
-   getAllRecipes,
-   getRecipesByName,
-   getRecipesbyId,
-   searchRecipes,
-} from "../../redux/actions";
+import { useState } from "react";  // Eliminé el useEffect ya que simplificamos la lógica
 import { useDispatch } from "react-redux";
+import { getRecipesByName, getRecipesbyId } from "../../redux/actions";
 
 const SearchBar = () => {
    const [searchTerm, setSearchTerm] = useState("");
-   const [prevSearchTerm, setPrevSearchTerm] = useState("");
    const dispatch = useDispatch();
 
    const handleInputChange = (event) => {
@@ -24,24 +18,12 @@ const SearchBar = () => {
 
    const handleSearch = (event) => {
       event.preventDefault();
-      if (parseInt(searchTerm)) {
-        dispatch(getRecipesbyId(searchTerm));
+      if (isNaN(searchTerm)) {
+         dispatch(getRecipesByName(searchTerm));
       } else {
-        dispatch(getRecipesByName(searchTerm));
+         dispatch(getRecipesbyId(searchTerm));
       }
-    };
-    
-
-   useEffect(() => {
-      if (prevSearchTerm) {
-         if (parseInt(prevSearchTerm)) {
-            dispatch(getRecipesbyId(prevSearchTerm));
-         } else {
-            dispatch(getRecipesByName(prevSearchTerm));
-         }
-         setPrevSearchTerm("");
-      }
-   }, [prevSearchTerm, dispatch]);
+   };
    
 
    return (
@@ -68,3 +50,4 @@ const SearchBar = () => {
 };
 
 export default SearchBar;
+

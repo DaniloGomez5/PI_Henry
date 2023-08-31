@@ -7,7 +7,7 @@ import NavBar from "../NavBar/NavBar";
 import { Link } from "react-router-dom";
 import { getDiets, createRecipe } from "../../redux/actions";
 import style from "./CreateForm.module.css";
-import Footer from "../Footer/Footer";
+
 
 const Form = ({ dietTypes, createRecipe }) => {
   const [formSubmitted, setFormSubmitted] = useState(false);

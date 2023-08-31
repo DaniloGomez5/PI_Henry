@@ -140,7 +140,7 @@ export const createRecipe = (recipe) => {
    };
 };
 
-export const searchRecipes = (name) => {
+/* export const searchRecipes = (name) => {
    return async (dispatch) => {
       try {
          const { data } = await axios.get(`${API_URL}?name=${name}`);
@@ -154,7 +154,7 @@ export const searchRecipes = (name) => {
          alert("Error al buscar recetas.");
       }
    };
-};
+}; */
 
 export const getRecipesByName = (name) => {
    return async (dispatch) => {

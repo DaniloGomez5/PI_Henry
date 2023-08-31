@@ -6,16 +6,16 @@ import style from "./Recipes.module.css";
 const Recipes = ({ info }) => {
    return (
       <div className={style.contain}>
-         {info?.map((recip, index) => (
+         {info?.map((recipe) => (
             <Recipe
-               name={recip.title}
-               id={recip.id}
-               key={index}
-               image={recip.image}
-               diets={recip.diets}
-               healthscore={recip.healthScore}
-               summary={recip.summary}
-               steps={recip.steps}
+               name={recipe.title}
+               id={recipe.id}
+               key={recipe.id}
+               image={recipe.image}
+               diets={recipe.diets}
+               healthscore={recipe.healthScore}
+               summary={recipe.summary}
+               steps={recipe.steps}
             />
          ))}
       </div>

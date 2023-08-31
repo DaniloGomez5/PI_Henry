@@ -1,4 +1,4 @@
-.landingPageContent {
+.landing {
    background-image:url(https://th.bing.com/th/id/R.4c36e08c14a7f1acc09d9bb5bf3fef8c?rik=4%2fO7XGMXmsaLfw&pid=ImgRaw&r=0);
    background-size: cover;
    background-repeat: no-repeat;
@@ -12,7 +12,7 @@
    align-items: center;
 }
 
-.buttonStart {
+.button {
    text-decoration: none;
    font-size: 20px;
    font-weight: 700; /* Utilizando el valor numérico para el grosor de la fuente */
@@ -24,11 +24,10 @@
    border-radius: 2rem;
    border: none;
    color: #ffffff;
-   background-color: #D3C0A7; /* Gradiente en tonos beige */
-   transition: background-color 0.5s ease, color 0.5s ease;
+   background: linear-gradient(45deg, rgba(210, 180, 140, 0.7), rgba(0, 0, 0, 0.7));
 }
 
-.buttonStart:hover {
+.button:hover {
    background-color: #F7EED6; /* Cambio de color al pasar el mouse */
    color: #000000; /* Cambio a color negro */
    cursor: pointer;
@@ -38,32 +37,22 @@
    margin-top: 15rem;
    margin-left: 7rem;
    width: 25rem;
+   align-items: center;
 }
 
 .h1Title {
-   background-image: linear-gradient(
-      to left,
-      #000000,
-      #260ac7,
-      #a11616,
-      #101669,
-      #fff2f2
-   );
-   -webkit-background-clip: text;
+   background-image: linear-gradient(45deg, #ffd700, #c0a34c); /* Gradiente en tonos dorados */
    background-clip: text;
-   animation: color 3s linear infinite;
-   background-size: 500%;
-   font-family: "Kalam", cursive;
+   -webkit-background-clip: text;
+   font-family: "Montserrat", sans-serif;
+   color: transparent;
    font-size: 4rem;
    line-height: 1;
-   margin: 0; /* Evita el margen en el h1Title */
+   margin: 0;
+   text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5); /* Text shadow para resaltar */
+   display: flex; /* Agregado para centrar verticalmente */
+   align-items: center; /* Agregado para centrar verticalmente */
 }
-@keyframes color {
-   from {
-      background-position: 0% 50%;
-   }
 
-   to {
-      background-position: 100% 50%;
-   }
-}
+
+
