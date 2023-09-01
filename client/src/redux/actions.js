@@ -177,16 +177,22 @@ export const getRecipesByName = (name) => {
 export const getRecipesbyId = (id) => {
    return async (dispatch) => {
       try {
-         console.log("llega action", `${API_URL}${id}`);
+         console.log("Llega a la acción", `${API_URL}${id}`);
+
          const response = await axios.get(`${API_URL}recipes/${id}`);
+         console.log("Respuesta de la solicitud:", response.data);
+
          const recipe = [response.data];
-         console.log(recipe);
+         console.log("Receta obtenida:", recipe);
+
          dispatch({
             type: GET_RECIPE_BY_ID,
             payload: recipe,
          });
       } catch (error) {
+         console.log("Error al obtener receta por ID:", error.message);
          alert("Error al buscar recetas por ID.");
       }
    };
 };
+
