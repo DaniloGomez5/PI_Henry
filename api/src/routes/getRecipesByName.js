@@ -18,7 +18,7 @@ const getRecipesByName = async (req, res) => {
     if (recipes.length === 0) {
       const apiKey = process.env.API_KEY;
       const response = await axios.get(
-        `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&query=${Name}`
+        `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&query=${Name}&addRecipeInformation=true`
       );
       const apiRecipes = response.data.results;
       return res.json(apiRecipes);

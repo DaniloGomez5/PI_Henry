@@ -157,7 +157,7 @@ const reducer = (state = initialState, action) => {
       console.log(action.payload);
       return {
         ...state,
-        filterRecipes: action.payload,
+        allHomeRecipes: action.payload,
       };
 
     default:
