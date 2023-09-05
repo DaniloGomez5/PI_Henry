@@ -8,7 +8,7 @@ const Recipes = ({ info }) => {
       <div className={style.contain}>
          {info?.map((recipe) => (
             <Recipe
-               name={recipe.title}
+               title={recipe.title}
                id={recipe.id}
                key={recipe.id}
                image={recipe.image}

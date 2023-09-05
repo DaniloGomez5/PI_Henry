@@ -92,3 +92,31 @@
 button:hover {
    transform: scale(1.2);
 }
+
+.select {
+   background-color: #D2B48C; /* Color madera */
+   color: #000; /* Color del texto */
+   padding: 8px; /* Espaciado interno más pequeño */
+   border: 2px solid #A0522D; /* Borde marrón */
+   border-radius: 5px; /* Borde redondeado */
+   width: 150px; /* Ancho más pequeño */
+   font-size: 14px; /* Tamaño de fuente más pequeño */
+   outline: none; /* Quita el resaltado cuando se enfoca */
+   /* Puedes seguir ajustando estos valores según tus necesidades */
+}
+
+.label {
+   color: #000000; /* Color del texto, generalmente claro para contraste */
+   font-size: 16px; /* Tamaño de fuente */
+   margin-bottom: 5px; /* Espacio entre el label y el elemento siguiente */
+   display: inline-block; /* Para que el fondo se ajuste al contenido */
+   background-color: #d2b48c8f; /* Color madera */
+   padding: 5px 5px; /* Espaciado interno */
+   border-radius: 5px; /* Borde redondeado */
+}
+
+ 
+
+ 
+ 
+ 

@@ -1,19 +1,6 @@
 /* eslint-disable no-unused-vars */
 import axios from "axios";
-import {
-   CLEAN_DETAIL,
-   CREATE_RECIPE,
-   FILTERBYDIET,
-   FILTERBYSOURCE,
-   GET_DIETS,
-   GET_RECIPES,
-   GET_RECIPE_BY_ID,
-   GET_RECIPE_BY_NAME,
-   GET_RECIPE_DETAIL,
-   ORDERBYNAME,
-   PAGINATE,
-   SEARCH_RECIPE,
-} from "./action-types";
+import { CLEAN_DETAIL, CREATE_RECIPE, FILTERBYDIET, FILTERBYSOURCE, GET_DIETS, GET_RECIPES, GET_RECIPE_BY_ID, GET_RECIPE_BY_NAME, GET_RECIPE_DETAIL, ORDERBYNAME, PAGINATE } from "./action-types";
 
 const API_URL = "http://localhost:3001/";
 
@@ -140,28 +127,11 @@ export const createRecipe = (recipe) => {
    };
 };
 
-/* export const searchRecipes = (name) => {
-   return async (dispatch) => {
-      try {
-         const { data } = await axios.get(`${API_URL}?name=${name}`);
-         if (data.length > 0) {
-            dispatch({
-               type: SEARCH_RECIPE,
-               payload: data,
-            });
-         } else alert("No hay recetas con ese nombre.");
-      } catch (error) {
-         alert("Error al buscar recetas.");
-      }
-   };
-}; */
-
 export const getRecipesByName = (name) => {
    return async (dispatch) => {
       try {
          const response = await axios.get(`${API_URL}recipes/name?name=${name}`);
          const recipe = response.data;
-         console.log(recipe);
          if (recipe.length > 0) {
             dispatch({
                type: GET_RECIPE_BY_NAME,
@@ -177,20 +147,13 @@ export const getRecipesByName = (name) => {
 export const getRecipesbyId = (id) => {
    return async (dispatch) => {
       try {
-         console.log("Llega a la acción", `${API_URL}${id}`);
-
          const response = await axios.get(`${API_URL}recipes/${id}`);
-         console.log("Respuesta de la solicitud:", response.data);
-
          const recipe = [response.data];
-         console.log("Receta obtenida:", recipe);
-
          dispatch({
             type: GET_RECIPE_BY_ID,
             payload: recipe,
          });
       } catch (error) {
-         console.log("Error al obtener receta por ID:", error.message);
          alert("Error al buscar recetas por ID.");
       }
    };

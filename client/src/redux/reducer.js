@@ -92,7 +92,7 @@ const reducer = (state = initialState, action) => {
       if (action.payload === "ALL") {
         filterRecipes = state.allHomeRecipesCopy;
       } else {
-        filterRecipes = state.recipesFiltered.filter((recipe) => {
+        filterRecipes = state.allHomeRecipesCopy.filter((recipe) => {
           return (
             (action.payload === "API" && !isNaN(recipe.id)) ||
             (action.payload !== "API" && isNaN(recipe.id))
@@ -154,10 +154,9 @@ const reducer = (state = initialState, action) => {
       };
 
     case GET_RECIPE_BY_NAME:
-      console.log(action.payload);
       return {
         ...state,
-        filterRecipes: action.payload,
+        allHomeRecipes: action.payload,
       };
 
     default:

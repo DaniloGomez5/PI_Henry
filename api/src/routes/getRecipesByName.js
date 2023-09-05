@@ -9,7 +9,7 @@ const getRecipesByName = async (req, res) => {
   try {
     const recipes = await Recipe.findAll({
       where: {
-        name: {
+        title: {
           [Op.iLike]: `%${Name}%`,
         },
       },
@@ -18,14 +18,14 @@ const getRecipesByName = async (req, res) => {
     if (recipes.length === 0) {
       const apiKey = process.env.API_KEY;
       const response = await axios.get(
-        `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&query=${Name}`
+        `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&query=${Name}&addRecipeInformation=true`
       );
       const apiRecipes = response.data.results;
       return res.json(apiRecipes);
     }
     res.json(recipes);
   } catch (error) {
-    res.status(500).json({ message: "Error en el servidor" });
+    res.status(500).json({ message: `Error en el servidor. ${error} (error)` });
   }
 };
 

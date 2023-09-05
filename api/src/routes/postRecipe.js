@@ -1,17 +1,21 @@
+/* const { v4 } = require('uuid'); */
 const express = require('express');
 const { Recipe, Diets } = require('../db'); // Importa los modelos Recipe y Diets
 const { Op } = require('sequelize');
 
 // Ruta para crear una nueva receta
 const postRecipe = async (req, res) => {
-  const { name, image, summary, healthScore, steps, diets } = req.body;
-
+  const { title, image, summary, healthScore, steps, diets } = req.body;
+  // Generar uuid
   try {
+   /*  const id = v4() */
     // Crea la receta en la base de datos
     const newRecipe = await Recipe.create({
-      name,
+ /*      id, */
+      title,
       image,
       summary,
+      diets,
       healthScore,
       steps,
     });
@@ -31,7 +35,7 @@ const postRecipe = async (req, res) => {
     res.status(201).json({ message: 'Receta creada exitosamente' });
   } catch (error) {
     console.error('Error en el servidor:', error);
-    res.status(500).json({ message: 'Error en el servidor' });
+    res.status(500).json({ message: `Error en el servidor ${error}` });
   }
 };
 

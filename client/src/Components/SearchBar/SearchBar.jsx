@@ -1,6 +1,5 @@
-/* eslint-disable no-unused-vars */
 import style from "./SearchBar.module.css";
-import { useState } from "react";  // Eliminé el useEffect ya que simplificamos la lógica
+import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { getRecipesByName, getRecipesbyId } from "../../redux/actions";
 

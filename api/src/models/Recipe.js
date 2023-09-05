@@ -7,13 +7,13 @@ const Recipe = (sequelize) => {
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
-      autoIncrement: true,
+      autoIncrement: true
     },
-    name: {
+    title: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    Image: {
+    image: {
       type: DataTypes.STRING,
       allowNull: false
     },
@@ -21,14 +21,17 @@ const Recipe = (sequelize) => {
       type: DataTypes.STRING,
       allowNull: false
     },
-    healtScore: {
+    diets: {
+      type: DataTypes.ARRAY(DataTypes.STRING)
+    },
+    healthScore: {
       type: DataTypes.INTEGER,
       allowNull: false
     },
     steps: {
-      type: DataTypes.TEXT,
+      type: DataTypes.JSON,
       allowNull: false
-    },
+    }
   });
   return Recipe;
 }; 

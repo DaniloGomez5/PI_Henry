@@ -15,12 +15,12 @@ const Form = ({ dietTypes, createRecipe }) => {
   useEffect(() => {
     if (formSubmitted) {
       setFormData({
-        name: "",
+        title: "",
         summary: "",
         steps: "",
         image: "",
         diets: [],
-        healthscore: "0",
+        healthScore: 0,
       });
       setErrors({});
       setNewStep("");
@@ -30,15 +30,15 @@ const Form = ({ dietTypes, createRecipe }) => {
   }, [formSubmitted]);
 
   const [formData, setFormData] = useState({
-    name: "",
+    title: "",
     summary: "",
     steps: "",
     image: "",
     diets: [],
-    healthscore: "",
+    healthScore: 0,
   });
 
-  const [errors, setErrors] = useState({ name: "Required field" });
+  const [errors, setErrors] = useState({ title: "Required field" });
   const [successMessage, setSuccessMessage] = useState("");
 
   useEffect(() => {
@@ -149,77 +149,34 @@ const Form = ({ dietTypes, createRecipe }) => {
       <div className={style.back}>
         <NavBar />
         <div className={style.formCont}>
-          {/* <div className={style.cont}></div> */}
-          {/* <div className={style.cont}> */}
           <form className={style.form} onSubmit={handleSubmit}>
             <label>Create your recipe</label>
-            <input
-              className={style.input}
-              name="name"
-              value={formData.name}
-              onChange={handleInputChange}
-              onBlur={handleInputChange}
-              placeholder="Recipe name"
-            />
-            {errors.name && <span className={style.error}>{errors.name}</span>}
+            
+        {/* TITLE */}    
+            <input className={style.input} name="title" value={formData.title} onChange={handleInputChange} onBlur={handleInputChange} placeholder="Recipe name"/>
+            {errors.title && <span className={style.error}>{errors.title}</span>}
+        
+        {/* SUMMARY */}
+            <textarea className={style.textarea} name="summary" value={formData.summary} onChange={handleInputChange} onBlur={handleInputChange} placeholder="Describe your recipe"/>
+            {errors.summary && (<span className={style.error}>{errors.summary}</span>)}
 
-            {/* <label className={style.title}>Description</label> */}
-            <textarea
-              className={style.textarea}
-              name="summary"
-              value={formData.summary}
-              onChange={handleInputChange}
-              onBlur={handleInputChange}
-              placeholder="Describe your recipe"
-            />
-            {errors.summary && (
-              <span className={style.error}>{errors.summary}</span>
-            )}
-
-            {/* <label className={style.title}>Steps</label> */}
-            {formData.steps.split("\n").map((step, index) => (
+        {/* STEPS */}
+            {formData.steps.split("\n").filter( (step) => {return (step !== "")} ).map((step, index) => (
               <div key={index}>
-                <input
-                  className={style.added}
-                  type="text"
-                  value={step}
-                  readOnly
-                />
-                <button
-                  className={style.button}
-                  type="button"
-                  onClick={() => handleRemoveStep(index)}
-                >
+                <input className={style.added} type="text" value={step} readOnly/>
+                <button className={style.button} type="button" onClick={() => handleRemoveStep(index)}>
                   Remove
                 </button>
               </div>
             ))}
-
-            <input
-              className={style.Xinput}
-              type="text"
-              value={newStep}
-              onChange={handleStepInputChange}
-              onBlur={handleStepInputChange}
-              placeholder="Steps"
-            />
-            <button
-              className={style.Xbutton}
-              type="button"
-              onClick={handleAddStep}
-            >
+            <input className={style.Xinput} type="text" value={newStep} onChange={handleStepInputChange} onBlur={handleStepInputChange} placeholder="Steps"/>
+            <button className={style.Xbutton} type="button" onClick={handleAddStep}>
               Add Steps
             </button>
-            {errors.steps && (
-              <span className={style.error}>{errors.steps}</span>
-            )}
-
-            {/* <label className={style.title}>Diets</label> */}
-            <select
-              name="diets"
-              value={""}
-              onChange={(event) => handleAddDiet(event.target.value)}
-            >
+            {errors.steps && (<span className={style.error}>{errors.steps}</span>)}
+        
+        {/* DIETS */}  
+            <select name="diets" value={""} onChange={(event) => handleAddDiet(event.target.value)}>
               <option value="">Select Diet</option>
               {dietTypes.map((diet) => (
                 <option key={diet.id} value={diet.name}>
@@ -229,66 +186,31 @@ const Form = ({ dietTypes, createRecipe }) => {
             </select>
             {formData.diets.map((diet, index) => (
               <div key={index}>
-                <input
-                  className={style.added}
-                  type="text"
-                  value={diet}
-                  readOnly
-                />
-                <button
-                  className={style.button}
-                  type="button"
-                  onClick={() => handleRemoveDiet(index)}
-                >
+                <input className={style.added} type="text" value={diet} readOnly/>
+                <button className={style.button} type="button" onClick={() => handleRemoveDiet(index)}>
                   Remove
                 </button>
               </div>
             ))}
-            {errors.diets && (
-              <span className={style.error}>{errors.diets}</span>
-            )}
-            {duplicateDietError && (
-              <span className={style.error}>{duplicateDietError}</span>
-            )}
-
-            {/* <label className={style.title}>Image URL</label> */}
-            <input
-              className={style.input}
-              name="image"
-              value={formData.image}
-              type="text"
-              onChange={handleInputChange}
-              onBlur={handleInputChange}
-              placeholder="Image URL"
-            />
-            {errors.image && (
-              <span className={style.error}>{errors.image}</span>
-            )}
-
-            {/* <label className={style.title}>Health-Score</label> */}
-            <input
-              className={style.input}
-              name="healthscore"
-              value={formData.healthscore}
-              type="number"
-              onChange={handleInputChange}
-              onBlur={handleInputChange}
-              placeholder="Health-Score (0 - 100)"
-            />
-            {errors.healthscore && (
-              <span className={style.error}>{errors.healthscore}</span>
-            )}
-
+            {errors.diets && (<span className={style.error}>{errors.diets}</span>)}
+            {duplicateDietError && (<span className={style.error}>{duplicateDietError}</span>)}
+        
+        {/* IMAGE */}
+            <input className={style.input} name="image" value={formData.image} type="text" onChange={handleInputChange} onBlur={handleInputChange} placeholder="Image URL"/>
+            {errors.image && (<span className={style.error}>{errors.image}</span>)}
+        
+        {/* HEALTHSCORE */}
+            <input className={style.input} name="healthScore" value={formData.healthScore === 0 ? "" : formData.healthScore} min="1" max="100" type="number" onChange={handleInputChange} onBlur={handleInputChange} placeholder="Health-Score (0 - 100)"/>
+            {errors.healthScore && (<span className={style.error}>{errors.healthScore}</span>)}
+        
+        {/* SUBMIT */}
             <button className={style.Sbutton} type="submit">
               Upload recipe
             </button>
           </form>
         </div>
       </div>
-      {successMessage && (
-        <div className="success-message">{successMessage}</div>
-      )}
-      {/* </div> */}
+      {successMessage && (<div className="success-message">{successMessage}</div>)}
     </div>
   );
 };

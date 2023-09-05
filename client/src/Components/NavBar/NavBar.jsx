@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { NavLink } from "react-router-dom";
 import style from "./NavBar.module.css";
 import SearchBar from "../SearchBar/SearchBar";

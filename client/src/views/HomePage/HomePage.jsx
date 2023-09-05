@@ -1,13 +1,11 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import style from "./HomePage.module.css";
 import NavBar from "../../Components/NavBar/NavBar";
 import Recipes from "../../Components/Recipes/Recipes";
-import RecipeList from "../../Components/RecipeList/RecipeList";
 import { FilterByDiets, FilterBySource, OrderName, getAllRecipes, getDiets, page } from "../../redux/actions";
-/* import Footer from "../../Components/Footer/Footer"; */
 
 const HomePage = () => {
   const dispatch = useDispatch();
@@ -24,14 +22,14 @@ const HomePage = () => {
   };
 
   const handleOrderByName = (event) => {
-    console.log("Order button clicked");
-    console.log("Selected value:", event.target.value);
     dispatch(OrderName(event.target.value));
   };
+
   const handleFilterSource = (event) => {
     event.preventDefault();
     dispatch(FilterBySource(event.target.value));
   };
+  
   const handleFilterDiets = (event) => {
     event.preventDefault();
     dispatch(FilterByDiets(event.target.value));
@@ -42,13 +40,10 @@ const HomePage = () => {
       <NavBar />
 
       <div className={style.titleCont}>
-        {/* <div className={style.title}>
-          <h2 className={style.h2Title}>Recipes especially for you:</h2>
-        </div> */}
 
         <div>
-          <label>Order by:</label>
-          <select onChange={handleOrderByName}>
+          <label className={style.label}>Order by:</label>
+          <select className={style.select} onChange={handleOrderByName}>
             <option value="none">No order</option>
             <option value="az">A to Z</option>
             <option value="za">Z to A</option>
@@ -58,14 +53,14 @@ const HomePage = () => {
         </div>
 
         <div>
-          <label>Filter by:</label>
-          <select onChange={handleFilterSource}>
+          <label className={style.label}>Filter by:</label>
+          <select className={style.select} onChange={handleFilterSource}>
             <option value="ALL">All</option>
             <option value="DB">BDD</option>
             <option value="API">API</option>
           </select>
 
-          <select onChange={handleFilterDiets}>
+          <select className={style.select} onChange={handleFilterDiets}>
             <option value="ALL">All Diets</option>
             {allDiets.map((dietOp) => (
               <option value={dietOp.name} key={dietOp.id}>
@@ -75,12 +70,10 @@ const HomePage = () => {
           </select>
         </div>
       </div>
-      {/* <RecipeList /> */}
 
       <div className={style.info}>
         <Recipes info={allRecipes} />
       </div>
-      {/* <Footer /> */}
         <div className={style.paginate}>
           <label className={style.explore}>Prev...</label>
           <button className={style.button} name="prev" onClick={paginate}>
