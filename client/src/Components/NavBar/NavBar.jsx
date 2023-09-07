@@ -19,11 +19,7 @@ const NavBar = () => {
                <NavLink to="/Create" className={style.NewRecipe}>
                   Create your recipe 🧑‍🍳
                </NavLink>
-               <NavLink
-                  onClick={handleHomeClick}
-                  className={style.goWelcome}
-                  to="/home"
-               >
+               <NavLink onClick={handleHomeClick} className={style.goWelcome} to="/home">
                   🍳 Home
                </NavLink>
             </nav>

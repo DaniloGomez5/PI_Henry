@@ -13,7 +13,6 @@ const getRecipes= async (req, res) => {
     const recipes = spoonacularResponse.data.results;
     res.json(recipes);
 } catch (error) {
-    console.log(error); // Agrega esta línea
     res.status(500).json({ error: 'Error al obtener las recetas' });
   }
 };

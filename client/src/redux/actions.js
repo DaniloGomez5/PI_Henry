@@ -23,8 +23,10 @@ export const getDiets = () => {
    return async (dispatch) => {
       try {
          const response = await axios.get(`${API_URL}diets`);
-         const dietis = response.data;
-         dispatch({ type: GET_DIETS, payload: dietis });
+         const diets = response.data;
+         dispatch({ 
+            type: GET_DIETS, 
+            payload: diets });
       } catch (error) {
          console.log(error.message);
       }
@@ -92,8 +94,7 @@ export const getRecipeDetail = ({ id }) => {
                payload: null,
             });
          }
-         const response = await axios.get(`${API_URL}recipes/${id}`
-         );
+         const response = await axios.get(`${API_URL}recipes/${id}`);
          const recipe = response.data;
          dispatch({
             type: GET_RECIPE_DETAIL,
