@@ -1,8 +1,8 @@
 const express = require("express");
-const { Recipe } = require("../db"); // Importa el modelo Recipe
+const { Recipe } = require("../db");
 const axios = require("axios");
 require("dotenv").config();
-const { Op } = require("sequelize"); // Importa el operador para realizar consultas LIKE en Sequelize
+const { Op } = require("sequelize");
 
 const getRecipesByName = async (req, res) => {
   const Name = req.query.name;

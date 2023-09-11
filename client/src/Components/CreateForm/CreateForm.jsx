@@ -4,7 +4,6 @@ import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import ValidateForm from "./ValidateForm";
 import NavBar from "../NavBar/NavBar";
-import { Link } from "react-router-dom";
 import { getDiets, createRecipe } from "../../redux/actions";
 import style from "./CreateForm.module.css";
 

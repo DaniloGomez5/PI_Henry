@@ -1,8 +1,8 @@
 .contentSearchBar {
    display: flex;
    align-items: center;
-   max-width: 300px; /* Ajusta el ancho máximo según tu diseño */
-   margin: 1rem; /* Centrar horizontalmente */
+   max-width: 300px;
+   margin: 1rem;
 }
 
 .inputSearch {
@@ -31,7 +31,7 @@
    height: 2.5rem;
    width: 1.5rem;
    border-radius: 0 1rem 1rem 0;
-   background-color: #ffffff; /* Un color verde elegante */
+   background-color: #ffffff;
    color: rgb(0, 0, 0);
    font-weight: bold;
    border: none;
@@ -42,7 +42,7 @@
 
 .cleanButton:hover {
    transform: scale(1.2);
-   background-color: #4b1d1d; /* Un tono más oscuro del verde */
+   background-color: #4b1d1d;
    border-radius: 1rem;
 }
 
@@ -50,7 +50,7 @@
    font-family: 'Montserrat', sans-serif;
    height: 2.5rem;
    width: 1.5rem;
-   background-color: #ffffff; /* Un color rojo elegante */
+   background-color: #ffffff;
    border: none;
    cursor: pointer;
    transition: transform 0.2s, background-color 0.3s;
@@ -59,7 +59,7 @@
 
 .searchbutton:hover {
    transform: scale(1.2);
-   background-color: #90e04f; /* Un tono más oscuro del rojo */
+   background-color: #90e04f;
    border-radius: 1rem;
 }
 

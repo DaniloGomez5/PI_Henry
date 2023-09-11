@@ -1,4 +1,4 @@
-import { CLEAN_DETAIL, CREATE_RECIPE, FILTERBYDIET, FILTERBYSOURCE, GET_DIETS, GET_RECIPES, GET_RECIPE_BY_ID, GET_RECIPE_BY_NAME, GET_RECIPE_DETAIL, ORDERBYNAME, PAGINATE, SEARCH_RECIPE } from "./action-types";
+import { CLEAN_DETAIL, CREATE_RECIPE, FILTERBYDIET, FILTERBYSOURCE, GET_DIETS, GET_RECIPES, GET_RECIPE_BY_ID, GET_RECIPE_BY_NAME, GET_RECIPE_DETAIL, ORDERBYNAME, PAGINATE } from "./action-types";
 
 const initialState = {
   allHomeRecipes: [],
@@ -139,12 +139,6 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         allHomeRecipes: [],
-      };
-
-    case SEARCH_RECIPE:
-      return {
-        ...state,
-        recipe: action.payload,
       };
 
     case GET_RECIPE_BY_ID:

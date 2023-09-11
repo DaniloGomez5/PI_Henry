@@ -74,21 +74,21 @@
  }
  
  .steps {
-   width: 200%; /* Ajusta el ancho para que esté más centrado */
-   margin: 20px; /* Centra horizontalmente */
+   width: 200%;
+   margin: 20px;
    padding: 1rem;
    background-color: rgba(0, 0, 0, 0.7);
    border-radius: 1rem;
  }
  
  .customSteps {
-   font-size: 1rem; /* Aumenta el tamaño del texto */
+   font-size: 1rem;
    color: whitesmoke;
    text-shadow: -1px -1px black, 1px 1px #333;
-   padding: 1.5rem; /* Aumenta el espacio interno */
+   padding: 1.5rem; 
    background-color: rgba(0, 0, 0, 0.7);
    border-radius: 1rem;
-   max-height: 30vh; /* Ajusta la altura máxima */
+   max-height: 30vh; 
    overflow-y: auto;
  }
  

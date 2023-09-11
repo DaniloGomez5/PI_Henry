@@ -15,10 +15,10 @@
 .button {
    text-decoration: none;
    font-size: 20px;
-   font-weight: 700; /* Utilizando el valor numérico para el grosor de la fuente */
+   font-weight: 700; 
    margin-top: 2rem;
    margin-left: 7rem;
-   padding: 0.5rem 0.5rem; /* Ajuste en el espaciado interno */
+   padding: 0.5rem 0.5rem; 
    height: 40px;
    width: 110px;
    border-radius: 2rem;
@@ -28,8 +28,8 @@
 }
 
 .button:hover {
-   background-color: #F7EED6; /* Cambio de color al pasar el mouse */
-   color: #000000; /* Cambio a color negro */
+   background-color: #F7EED6; 
+   color: #000000;
    cursor: pointer;
 }
 
@@ -41,7 +41,7 @@
 }
 
 .h1Title {
-   background-image: linear-gradient(45deg, #ffd700, #c0a34c); /* Gradiente en tonos dorados */
+   background-image: linear-gradient(45deg, #ffd700, #c0a34c); 
    background-clip: text;
    -webkit-background-clip: text;
    font-family: "Montserrat", sans-serif;
@@ -49,9 +49,9 @@
    font-size: 4rem;
    line-height: 1;
    margin: 0;
-   text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5); /* Text shadow para resaltar */
-   display: flex; /* Agregado para centrar verticalmente */
-   align-items: center; /* Agregado para centrar verticalmente */
+   text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5); 
+   display: flex; 
+   align-items: center; 
 }
 
 

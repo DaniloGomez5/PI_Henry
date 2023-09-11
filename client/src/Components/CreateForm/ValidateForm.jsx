@@ -20,14 +20,6 @@ const ValidateForm = (formData) => {
       errors.steps = "Add at least 1 step.";
    }
 
-   /* if (
-      !/^(http|https):\/\/[^\s/$.?#].[^\s]*\.(jpg|jpeg|png|gif)$/.test(
-         formData.image
-      )
-   ) {
-      errors.image = "Add a link to an image (jpg|jpeg|png|gif).";
-   } */
-
    if (formData.healthscore < 1 || formData.healthscore > 100) {
       errors.healthscore = "Healthscore must be between 1 and 100.";
    }

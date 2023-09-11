@@ -18,9 +18,6 @@ export const Details = () => {
     };
   }, [dispatch, id]);
 
-  useEffect(() => {
-  }, [recipeDetail]);
-
   const handleHomeClick = () => {
     if (window.location.pathname === "/home") window.location.reload();
   };
