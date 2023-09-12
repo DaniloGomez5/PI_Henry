@@ -14,7 +14,7 @@ const getDiets = async (req, res) => {
 
       const apiDiets = response.data.results.reduce((dietsArray, recipe) => {
         return dietsArray.concat(recipe.diets);
-      }, []);
+      }, []); 
 
       const uniqueDiets = [...new Set(apiDiets)].sort();
 

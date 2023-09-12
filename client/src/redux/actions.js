@@ -26,7 +26,8 @@ export const getDiets = () => {
          const diets = response.data;
          dispatch({ 
             type: GET_DIETS, 
-            payload: diets });
+            payload: diets 
+         });
       } catch (error) {
          console.log(error.message);
       }

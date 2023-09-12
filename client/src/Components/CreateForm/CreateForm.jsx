@@ -132,7 +132,6 @@ const Form = ({ dietTypes, createRecipe }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (Object.keys(errors).length === 0) {
-      console.log(errors);
       createRecipe(formData);
       setFormSubmitted(true);
       alert("Recipe successfully Created!");
