@@ -7,21 +7,27 @@ const { Op } = require("sequelize");
 const getRecipesByName = async (req, res) => {
   const Name = req.query.name;
   try {
-    const recipes = await Recipe.findAll({
+    let recipes = await Recipe.findAll({
       where: {
         title: {
           [Op.iLike]: `%${Name}%`,
         },
       },
+      raw: true
     });
-
-    if (recipes.length === 0) {
+    recipes.forEach((rec) => {
+      rec.source = "BDD"
+    });
+    {
       const apiKey = process.env.API_KEY;
       const response = await axios.get(
         `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&query=${Name}&addRecipeInformation=true`
       );
       const apiRecipes = response.data.results;
-      return res.json(apiRecipes);
+      apiRecipes.forEach(rawRecipe => {
+        rawRecipe.source = "API"
+        recipes.push(rawRecipe);
+      });
     }
     res.json(recipes);
   } catch (error) {

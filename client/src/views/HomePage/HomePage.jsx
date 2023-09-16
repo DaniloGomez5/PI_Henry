@@ -56,7 +56,7 @@ const HomePage = () => {
           <label className={style.label}>Filter by:</label>
           <select className={style.select} onChange={handleFilterSource}>
             <option value="ALL">All</option>
-            <option value="DB">BDD</option>
+            <option value="BDD">BDD</option>
             <option value="API">API</option>
           </select>
 

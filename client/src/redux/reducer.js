@@ -1,4 +1,16 @@
-import { CLEAN_DETAIL, CREATE_RECIPE, FILTERBYDIET, FILTERBYSOURCE, GET_DIETS, GET_RECIPES, GET_RECIPE_BY_ID, GET_RECIPE_BY_NAME, GET_RECIPE_DETAIL, ORDERBYNAME, PAGINATE } from "./action-types";
+import {
+  CLEAN_DETAIL,
+  CREATE_RECIPE,
+  FILTERBYDIET,
+  FILTERBYSOURCE,
+  GET_DIETS,
+  GET_RECIPES,
+  GET_RECIPE_BY_ID,
+  GET_RECIPE_BY_NAME,
+  GET_RECIPE_DETAIL,
+  ORDERBYNAME,
+  PAGINATE,
+} from "./action-types";
 
 const initialState = {
   allHomeRecipes: [],
@@ -74,6 +86,7 @@ const reducer = (state = initialState, action) => {
         case "none":
           return {
             ...state,
+            currentPage: 0,
             allHomeRecipes: state.allHomeRecipesCopy.slice(0, ITEMS_PAGE),
           };
         default:
@@ -82,9 +95,9 @@ const reducer = (state = initialState, action) => {
       const allRecipesOrder = [...recipesCopy].sort(orderFunction);
       return {
         ...state,
+        currentPage: 0,
         allHomeRecipes: allRecipesOrder.slice(0, ITEMS_PAGE),
         recipesFiltered: allRecipesOrder,
-        currentPage: 0,
       };
 
     case FILTERBYSOURCE:
@@ -93,14 +106,12 @@ const reducer = (state = initialState, action) => {
         filterRecipes = state.allHomeRecipesCopy;
       } else {
         filterRecipes = state.allHomeRecipesCopy.filter((recipe) => {
-          return (
-            (action.payload === "API" && !isNaN(recipe.id)) ||
-            (action.payload !== "API" && isNaN(recipe.id))
-          );
+          return action.payload === recipe.source;
         });
       }
       return {
         ...state,
+        currentPage: 0,
         allHomeRecipes: filterRecipes.slice(0, ITEMS_PAGE),
         sourceFilter: action.payload,
       };
@@ -120,7 +131,9 @@ const reducer = (state = initialState, action) => {
       }
       return {
         ...state,
+        currentPage: 0,
         allHomeRecipes: filterDiets.slice(0, ITEMS_PAGE),
+        recipesFiltered: filterDiets,
       };
 
     case GET_RECIPE_DETAIL:
@@ -150,7 +163,10 @@ const reducer = (state = initialState, action) => {
     case GET_RECIPE_BY_NAME:
       return {
         ...state,
-        allHomeRecipes: action.payload,
+        currentPage: 0,
+        allHomeRecipes: [...action.payload].splice(0, ITEMS_PAGE),
+        allHomeRecipesCopy: action.payload,
+        recipesFiltered: action.payload,
       };
 
     default:

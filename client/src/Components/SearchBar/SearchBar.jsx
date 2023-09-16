@@ -1,7 +1,7 @@
 import style from "./SearchBar.module.css";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { getRecipesByName, getRecipesbyId } from "../../redux/actions";
+import { getAllRecipes, getRecipesByName, getRecipesbyId } from "../../redux/actions";
 
 const SearchBar = () => {
    const [searchTerm, setSearchTerm] = useState("");
@@ -13,6 +13,7 @@ const SearchBar = () => {
 
    const handleClean = () => {
       setSearchTerm("");
+      dispatch(getAllRecipes())
    };
 
    const handleSearch = (event) => {
@@ -29,6 +30,7 @@ const SearchBar = () => {
       <div className={style.contentSearchBar}>
          <input
             className={style.inputSearch}
+            name="search-input"
             type="text"
             placeholder="Search recipes"
             value={searchTerm}

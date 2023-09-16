@@ -1,4 +1,5 @@
 const express = require("express");
+const { Sequelize } = require('sequelize');
 const { Recipe, Diets } = require("../db");
 const axios = require("axios");
 require("dotenv").config();
@@ -12,7 +13,8 @@ const getRecipesById = async (req, res) => {
       include: {
         model: Diets,
         through: "RecipeDiets",
-      },
+        attributes: []
+      }
     });
     if (!recipe) {
       const apiKey = process.env.API_KEY;
@@ -27,7 +29,7 @@ const getRecipesById = async (req, res) => {
     }
     res.json(recipe);
   } catch (error) {
-    res.status(500).json({ message: "Error en el servidor" });
+    res.status(500).json({ message: "Error en el servidor" + error });
   }
 };
 
