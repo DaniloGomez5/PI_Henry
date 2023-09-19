@@ -8,7 +8,6 @@ const getRecipes = async (req, res) => {
   recipes.forEach((rec) => {
     rec.source = "BDD"
   });
-  console.log("Antes" + typeof(recipes));
   try {
     const apiKey = process.env.API_KEY;
     const spoonacularResponse = await axios.get(
@@ -20,7 +19,6 @@ const getRecipes = async (req, res) => {
       rawRecipe.source = "API"
       recipes.push(rawRecipe);
     });
-  console.log("Despues" + typeof(recipes));
   res.json(recipes);
   } catch (error) {
     res.status(500).json({ error: `Error al obtener las recetas: ${error}` });
